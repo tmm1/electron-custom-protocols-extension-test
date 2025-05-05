@@ -1,7 +1,8 @@
 {
   "name": "SayHello",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "version": "4.2.0",
+  "host_permissions": ["<all_urls>"],
   "content_scripts": [{
     "matches": ["<all_urls>"],
     "js": ["sayHello.js"]

@@ -27,7 +27,7 @@ app.whenReady().then(async () => {
     callback(url)
   })
 
-  const ext = await ses.loadExtension(path.join(__dirname, '../extension'))
+  const ext = await ses.loadExtension(path.join(__dirname, '../extension'), { allowFileAccess: true })
 
   console.log(ext)
 
@@ -35,11 +35,11 @@ app.whenReady().then(async () => {
 
   win.loadURL(`${scheme}://example/hello/world.txt`)
 
-  const win2 = new BrowserWindow()
+  //const win2 = new BrowserWindow()
 
-  win2.loadURL('https://example.com/')
+  //win2.loadURL('https://example.com/')
 
   win.webContents.openDevTools()
 
-  win2.webContents.openDevTools()
+  //win2.webContents.openDevTools()
 })
